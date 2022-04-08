@@ -17,7 +17,7 @@ public class RequestHandler implements HttpHandler {
             sendResponse(httpThread, "Please, specify command name.", 400);
         }
 
-        String result = cliService.callCliTldr(commandName);
+        String result = cliService.invokeTldr(commandName);
         if (result != null) {
             sendResponse(httpThread, result, 200);
         } else {

@@ -74,7 +74,9 @@ Content-length: 42
 
 tldr has no information about 'something'.
 ```
-I found that when tldr don't find information about requested command in local index, it tries to update the index.
-Usually it can take some time, so I added 5s timeout to my API to avoid long response time.
-Also I update tldr local index in the time of Docker image creation, so you will most likely have
+I found that when tldr don't find information about requested command in local cache, it tries to update the cache.
+Usually it can take some time, so I added 5s timeout to my API to avoid long response time. There is open issue
+in tldr Github repository to add ability to turn off cache updating when page is not found:
+https://github.com/tldr-pages/tldr-node-client/issues/225.
+Also I update tldr local cache in the time of Docker image creation, so you will most likely have
 a more or less recent version :)
